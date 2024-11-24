@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica Formativa Obligatoria 3</title>
+  </head>
+  <body>
+    <h1>Martín Castaño</h1>
+    <p>DNI: 34.613.177</p>
+    <h2>Práctica Formativa Obligatoria 3</h2>
+
+    <!-- Estilo de Highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+</head>
+<body>
+  <h1>Nombre del Alumno</h1>
+  <h2>Práctica Formativa Obligatoria 3</h2>
+
+  <!-- Solución 1 -->
+  <h3>///////////// SOLUCION 1 /////////////</h3>
+  <pre><code class="language-javascript">
+    const calcularAreaRectangulo = (lado1, lado2) => {
+      return lado1 * lado2;
+    };
+
+    console.log(calcularAreaRectangulo(5, 3)); // Resultado 15
+    console.log(calcularAreaRectangulo(1.5, 30.5)); // Resultado  45.75
+    console.log(calcularAreaRectangulo(-2, 10)); // Resultado -20
+
+    /* LOGICA: En este caso primero pensé en incorporar dos argumentos 
+    que podrán ser números enteros o float. La función simplemente retorna
+    su multiplicación. */
+  </code></pre>
+
+  <h3>Solución 2: Contar palabras en una cadena</h3>
+  <pre><code class="language-javascript">
+      const contarPalabras = (cadena) => {
+        return cadena.trim().split(" ").length;
+      };
+      console.log(contarPalabras("Humahuaca es un lugar copado")); // Resultado 5
+      console.log(contarPalabras("Esta es una oracion convencional.")); // Resultado 5
+      console.log(contarPalabras(" Esta es una oracion, con signos de puntuación! ")); // Resultado 8
+      
+      /* LOGICA: Para este ejercicio me pareció interesante identificar como patrón repetitivo
+      de separación de palabras los espacios entre las mismas. Para ello, la función
+      split separa una cadena segun el caracter indicado y devuelve un arreglo, ofreciendo
+      una oportunidad para que contar la longitud del arreglo coincida con la cantidad de palabras
+      Con la función trim me aseguro que resista un caso de prueba en el que se introduce una 
+      oración con espacios adelante o detras del inicio de la oración */
+  </code></pre>
+
+  <h3>Solución 3: Invertir una cadena</h3>
+  <pre><code class="language-javascript">
+      const invertirCadena = (cadena) => {
+        return cadena.split("").reduce((acc, char) => char + acc);
+      };
+      
+      console.log("/////////////   SOLUCION 3   /////////////");
+      console.log(invertirCadena("hola")); // Resultado aloh
+      console.log(invertirCadena("calabaza")); // Resultado azabalac
+      console.log(invertirCadena("caballo")); // Resultado ollabac
+      
+      /* LOGICA: para este ejercicio se me ocurrio que un reduce serviria para iterar un array
+      de caracteres e ir acumulando el valor en sentido inverso. Sin embargo, para poder 
+      realizar esto debí transformar la cadena de texto en un array mediante .split("") */
+      
+  </code></pre>
+
+  <h3>Solución 4: Encontrar el palíndromo</h3>
+  <pre><code class="language-javascript">
+      const esPalindromo = (cadena) => {
+        return cadena === invertirCadena(cadena);
+      };
+            
+      console.log(esPalindromo("neuquen")); // Resultado true
+      console.log(esPalindromo("reconocer")); // Resultado true
+      console.log(esPalindromo("prueba")); // Resultado false
+      
+      /* LOGICA: Dado que para definir si una palabra es palindroma o no se debe invertir y comparar,
+      la funcion retorna la comparación de la cadena ingresada original con su versión
+      invertida obtenida a partir de la función del ejercicio 4. */
+  </code></pre>
+
+  <h3>Solución 5: Crear un programa para convertir la edad de un perro a años humanos</h3>
+  <button id="solucion-5">Ejecutar Solución 5</button>
+  <pre><code class="language-javascript">
+      const edadCanina = (edadPerro) => {
+        console.log(`Tu perro tiene ${edadPerro * 7} años humanos`);
+      };
+      
+      const edadPerroPrompt = Number(prompt("¿Cual es la edad de tu perro?"));
+      if (isNaN(edadPerroPrompt) || edadPerroPrompt <= 0) {
+        console.log("Por favor, ingresa un número válido mayor a 0.");
+      } else {
+        edadCanina(edadPerroPrompt);
+      }
+      /* LOGICA: Para este caso la funcion no debe retornar nada sino realizar la cuenta e 
+      imprimirla por consola dentro de su cuerpo funcional. */
+  </code></pre>
+  <!-- Incluir Highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
